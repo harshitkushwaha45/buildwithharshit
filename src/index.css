@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme */
+  --color-bg: 246 244 239;          /* #F6F4EF warm off-white */
+  --color-surface: 255 255 255;      /* #FFFFFF crisp card */
+  --color-surface-elevated: 240 237 229;
+  --color-line: 222 218 210;         /* #DEDAD2 subtle warm grey border */
+  --color-line-light: 235 232 225;
+  --color-ink: 22 26 29;             /* #161A1D near black */
+  --color-muted: 94 102 112;         /* #5E6670 muted slate */
+  --color-accent: 25 110 88;         /* #196E58 deep mint/emerald for contrast */
+  --color-accent-hover: 18 84 67;
+  color-scheme: light;
+}
+
+.dark {
+  /* Premium Dark Theme */
+  --color-bg: 13 15 16;             /* #0D0F10 deep near-black */
+  --color-surface: 23 27 29;         /* #171B1D dark charcoal */
+  --color-surface-elevated: 29 35 38;/* #1D2326 */
+  --color-line: 38 45 50;            /* #262D32 subtle dark grey border */
+  --color-line-light: 48 56 62;
+  --color-ink: 236 234 228;          /* #ECEAE4 off-white primary */
+  --color-muted: 141 150 158;        /* #8D969E muted blue-grey */
+  --color-accent: 143 211 189;       /* #8FD3BD soft mint green */
+  --color-accent-hover: 167 226 207; /* #A7E2CF */
+  color-scheme: dark;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-line));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-muted) / 0.5);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-ink));
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography refinements */
+h1, h2, h3, h4 {
+  letter-spacing: -0.025em;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+p, li, input, textarea, select {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, rgb(var(--color-ink)) 30%, rgb(var(--color-muted)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-mint {
+  background: linear-gradient(135deg, rgb(var(--color-accent)) 0%, #A7E2CF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle dot grid pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgb(var(--color-line) / 0.35) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgb(var(--color-line) / 0.45) 1px, transparent 1px);
+}
+
+/* Glow effects */
+.mint-glow {
+  box-shadow: 0 0 40px -10px rgba(143, 211, 189, 0.18);
+}
+
+.card-hover-effect {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-2px);
+  border-color: rgb(var(--color-accent) / 0.35);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.3);
+}
+
+/* Selection */
+::selection {
+  background-color: rgb(var(--color-accent) / 0.25);
+  color: rgb(var(--color-accent));
+}
