@@ -1,40 +1,4 @@
 {
-  "version": 2,
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "buildwithharshit.info"
-        }
-      ],
-      "destination": "https://buildwithharshit.online/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.buildwithharshit.info"
-        }
-      ],
-      "destination": "https://buildwithharshit.online/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.buildwithharshit.online"
-        }
-      ],
-      "destination": "https://buildwithharshit.online/$1",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/(.*)",
