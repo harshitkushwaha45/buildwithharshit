@@ -74,7 +74,6 @@ export const SnapshotCard = () => {
       key: 'availability',
       icon: CheckCircle2,
       label: 'Availability',
-      badge: 'Open for Hire',
       value: 'Available for Projects',
       highlight: true,
     },
