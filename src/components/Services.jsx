@@ -28,7 +28,7 @@ export const Services = ({ onSelectService }) => {
   };
 
   return (
-    <section id="services" className="py-10 md:py-14 relative">
+    <section id="services" className="pt-4 pb-12 sm:pt-6 sm:pb-16 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -5,9 +5,10 @@ import {
   Github, 
   Linkedin, 
   Mail, 
-  Sparkles, 
-  CheckCircle2, 
-  ChevronDown 
+  CheckCircle2,
+  Smartphone,
+  Zap,
+  MessageSquare
 } from 'lucide-react';
 import { SnapshotCard } from './SnapshotCard.jsx';
 import { BRAND } from '../data/portfolioData.js';
@@ -23,7 +24,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative pt-20 pb-8 md:pt-24 md:pb-10 overflow-hidden"
+      className="relative pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-24 lg:pb-12 overflow-hidden"
     >
       {/* Background ambient pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
@@ -32,9 +33,10 @@ export const Hero = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-accent/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* Two-Column CSS Grid: 58% Left (~col-span-7), 42% Right (~col-span-5) with consistent gap and top alignment */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-start">
           
-          {/* LEFT COLUMN: Main Pitch & CTA */}
+          {/* LEFT COLUMN: Main Pitch, Actions & Delivery Principles (~58%) */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Availability Badge */}
@@ -49,7 +51,7 @@ export const Hero = () => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl tracking-tight text-ink leading-[1.12] mb-3">
+            <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] tracking-tight text-ink leading-[1.14] mb-3.5">
               Turning Ideas Into{' '}
               <span className="font-serif italic font-normal text-accent">
                 Powerful Digital
@@ -63,7 +65,7 @@ export const Hero = () => {
             </p>
 
             {/* Core Value Quick Badges */}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 w-full mb-5 pt-0">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 w-full mb-5">
               <div className="flex items-center gap-1.5 text-xs text-muted">
                 <CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0" />
                 <span>Direct 1-on-1 Access</span>
@@ -79,11 +81,11 @@ export const Hero = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto mb-5">
+            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto mb-4">
               <button
                 onClick={() => scrollTo('contact')}
                 type="button"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 rounded-full font-display font-semibold text-xs sm:text-sm bg-accent text-bg hover:bg-accent-hover transition-all duration-200 shadow-subtle hover:shadow-glow group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 rounded-full font-display font-semibold text-xs sm:text-sm bg-accent text-bg hover:bg-accent-hover transition-all duration-200 shadow-subtle hover:shadow-glow group cursor-pointer"
               >
                 <span>Let's Work Together</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -92,7 +94,7 @@ export const Hero = () => {
               <button
                 onClick={() => scrollTo('projects')}
                 type="button"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 rounded-full font-display font-semibold text-xs sm:text-sm border border-line bg-surface hover:bg-surface-elevated text-ink hover:text-accent transition-all duration-200 shadow-subtle"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 rounded-full font-display font-semibold text-xs sm:text-sm border border-line bg-surface hover:bg-surface-elevated text-ink hover:text-accent transition-all duration-200 shadow-subtle cursor-pointer"
               >
                 <FolderGit2 className="w-3.5 h-3.5 text-muted group-hover:text-accent" />
                 <span>Explore My Work</span>
@@ -100,12 +102,12 @@ export const Hero = () => {
             </div>
 
             {/* Social Icons & Verified Badges */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-3 border-t border-line w-full">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 pt-3 border-t border-line w-full mb-5">
               <span className="text-[11px] uppercase tracking-wider font-semibold text-muted">
                 Connect Directly:
               </span>
               
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 {/* GitHub */}
                 <a
                   href={BRAND.github}
@@ -142,9 +144,62 @@ export const Hero = () => {
               </div>
             </div>
 
+            {/* Delivery Principles Panel (Fills space to balance right Developer Profile column) */}
+            <div className="w-full rounded-2xl border border-line bg-surface/60 backdrop-blur-sm p-4 sm:p-4.5 shadow-subtle">
+              <div className="flex items-center justify-between mb-3 pb-2 border-b border-line/60">
+                <span className="text-[10px] uppercase font-semibold tracking-widest text-muted">
+                  Delivery Principles
+                </span>
+                <span className="text-[10px] text-accent font-medium">
+                  Client-First Engineering
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {/* Principle A: Responsive by Design */}
+                <div className="flex flex-col justify-start">
+                  <div className="flex items-center gap-1.5 mb-1 text-ink">
+                    <Smartphone className="w-3.5 h-3.5 text-accent shrink-0" />
+                    <h3 className="text-xs font-semibold uppercase tracking-wider">
+                      Responsive By Design
+                    </h3>
+                  </div>
+                  <p className="text-[11px] text-muted leading-relaxed">
+                    Interfaces built to work across desktop, tablet and mobile.
+                  </p>
+                </div>
+
+                {/* Principle B: Built for Performance */}
+                <div className="flex flex-col justify-start sm:border-l sm:border-line/60 sm:pl-3">
+                  <div className="flex items-center gap-1.5 mb-1 text-ink">
+                    <Zap className="w-3.5 h-3.5 text-accent shrink-0" />
+                    <h3 className="text-xs font-semibold uppercase tracking-wider">
+                      Built for Performance
+                    </h3>
+                  </div>
+                  <p className="text-[11px] text-muted leading-relaxed">
+                    Focus on efficient, maintainable implementations.
+                  </p>
+                </div>
+
+                {/* Principle C: Clear Communication */}
+                <div className="flex flex-col justify-start sm:border-l sm:border-line/60 sm:pl-3">
+                  <div className="flex items-center gap-1.5 mb-1 text-ink">
+                    <MessageSquare className="w-3.5 h-3.5 text-accent shrink-0" />
+                    <h3 className="text-xs font-semibold uppercase tracking-wider">
+                      Clear Communication
+                    </h3>
+                  </div>
+                  <p className="text-[11px] text-muted leading-relaxed">
+                    Transparent milestones and regular project updates.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          {/* RIGHT COLUMN: Premium Snapshot Card */}
+          {/* RIGHT COLUMN: Premium Developer Profile Card (~42%) */}
           <div className="lg:col-span-5 flex justify-center w-full">
             <SnapshotCard />
           </div>

@@ -27,10 +27,10 @@ const PROJECT_TYPES = [
 ];
 
 const BUDGET_OPTIONS = [
-  "Under $300 / < ₹25,000 (Small Scope / Fixes / Landing Page)",
-  "$300 – $600 / ₹25,000 – ₹50,000 (Frontend / Small MVP)",
-  "$600 – $1,200 / ₹50,000 – ₹100,000 (Full-Stack MVP / Web App)",
-  "$1,200+ / ₹100,000+ (Custom Web Application / AI Solution)",
+  "Under $300",
+  "$300 – $600",
+  "$600 – $1,200",
+  "$1,200+",
   "Flexible / Open to Discussion",
 ];
 
@@ -39,7 +39,7 @@ export const Contact = ({ prefilledService }) => {
     name: '',
     email: '',
     projectType: 'Full-Stack Web Application',
-    budget: '$300 – $600 / ₹25,000 – ₹50,000 (Frontend / Small MVP)',
+    budget: '$300 – $600',
     description: '',
     hpField: '', // Honeypot field for invisible bot protection
   });
@@ -180,7 +180,7 @@ export const Contact = ({ prefilledService }) => {
       name: '',
       email: '',
       projectType: 'Full-Stack Web Application',
-      budget: '$300 – $600 / ₹25,000 – ₹50,000 (Frontend / Small MVP)',
+      budget: '$300 – $600',
       description: '',
       hpField: '',
     });
