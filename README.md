@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BuildWithHarshit — Freelance Portfolio & Client Acquisition Platform
 
 Official personal freelancing portfolio website for **Harshit Kushwaha** (Brand: **BuildWithHarshit**).
@@ -86,3 +87,6 @@ The contact inquiry form is built to work immediately out-of-the-box:
   - `VITE_EMAILJS_TEMPLATE_ID`
   - `VITE_EMAILJS_PUBLIC_KEY`
 - **Without EmailJS (Default Fallback):** The form generates a formatted email directly addressed to `mauryahaharshit@gmail.com` with one-click email application opening and clipboard copy, ensuring you never miss a client message.
+=======
+# buildwithharshit
+>>>>>>> origin/main
